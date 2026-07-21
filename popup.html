@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fiszki</title>
+
+    <style>
+        body {
+            width: 300px;
+            margin: 0;
+            padding: 16px;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #222222;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        #counter {
+            margin: 0 0 16px;
+            font-size: 14px;
+            color: #555555;
+        }
+
+        button {
+            transition: background 120ms ease;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px 12px;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        #copy-button {
+            background: #2563eb;
+        }
+
+        #copy-button:hover {
+            background: #1d4ed8;
+        }
+
+        .button:disabled {
+            background: #aaaaaa;
+            cursor: not-allowed;
+        }
+
+        .button:disabled:hover {
+            background: #aaaaaa;
+        }
+
+        #translate-button {
+            margin-top: 10px;
+            background: #16a34a;
+        }
+
+        #translate-button:hover {
+            background: #15803d;
+        }
+
+        #clear-button {
+            margin-top: 10px;
+            background: #dc2626;
+        }
+
+        #clear-button:hover {
+            background: #b91c1c;
+        }
+
+        #message {
+            margin: 12px 0 0;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        #message:empty {
+            display: none;
+        }
+
+        #latest-flashcard {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        #latest-flashcard[hidden] {
+            display: none;
+        }
+
+        #latest-flashcard h2 {
+            margin: 0 0 8px;
+            font-size: 13px;
+            color: #555555;
+        }
+
+        .flashcard-row {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .flashcard-label {
+            display: inline-block;
+            width: 46px;
+            color: #666666;
+            font-weight: 700;
+        }
+
+        .flashcard-value {
+            color: #222222;
+        }
+
+        #translation-tools {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid #e5e7eb;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1>Fiszki</h1>
+
+    <p id="counter">Loading...</p>
+
+    <button id="copy-button" class="button" type="button">
+        Copy to Clipboard
+    </button>
+
+    <section id="translation-tools">
+        <button id="translate-button" class="button" type="button">
+            Translate English to Polish
+        </button>
+    </section>
+
+    <button id="clear-button" class="button" type="button">
+        Clear All
+    </button>
+
+    <p id="message"></p>
+
+    <section id="latest-flashcard" hidden>
+        <h2>Latest flashcard</h2>
+
+        <p class="flashcard-row">
+            <span class="flashcard-label">EN</span>
+            <span id="latest-english" class="flashcard-value"></span>
+        </p>
+
+        <p class="flashcard-row" id="latest-polish-row" hidden>
+            <span class="flashcard-label">PL</span>
+            <span id="latest-polish" class="flashcard-value"></span>
+        </p>
+
+        <p class="flashcard-row">
+            <span class="flashcard-label">ES/RU</span>
+            <span id="latest-translation" class="flashcard-value"></span>
+        </p>
+    </section>
+
+    <script src="config.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
