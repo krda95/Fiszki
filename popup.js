@@ -52,7 +52,10 @@ async function copyFlashcardsToClipboard() {
 
     await navigator.clipboard.writeText(text);
 
-    showMessage(`Copied ${flashcards.length} flashcards.`);
+    await chrome.storage.local.remove("flashcards");
+    renderFlashcardsState([]);
+
+    showMessage(`Copied ${flashcards.length} flashcards. History cleared.`);
   } catch (error) {
     console.error("Couldn't copy flashcards:", error);
     showMessage("Couldn't copy flashcards.");

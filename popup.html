@@ -10,8 +10,9 @@
             margin: 0;
             padding: 16px;
             font-family: Arial, sans-serif;
-            background: #ffffff;
-            color: #222222;
+            background: #1a1b1e;
+            color: #e6e6e6;
+            color-scheme: dark;
         }
 
         h1 {
@@ -22,7 +23,7 @@
         #counter {
             margin: 0 0 16px;
             font-size: 14px;
-            color: #555555;
+            color: #a0a3aa;
         }
 
         button {
@@ -41,38 +42,39 @@
         }
 
         #copy-button {
-            background: #2563eb;
+            background: #3b82f6;
         }
 
         #copy-button:hover {
-            background: #1d4ed8;
+            background: #2563eb;
         }
 
         .button:disabled {
-            background: #aaaaaa;
+            background: #8a8d94;
+            color: #15161a;
             cursor: not-allowed;
         }
 
         .button:disabled:hover {
-            background: #aaaaaa;
+            background: #8a8d94;
         }
 
         #translate-button {
             margin-top: 10px;
-            background: #16a34a;
+            background: #22a55a;
         }
 
         #translate-button:hover {
-            background: #15803d;
+            background: #16a34a;
         }
 
         #clear-button {
             margin-top: 10px;
-            background: #dc2626;
+            background: #e5484d;
         }
 
         #clear-button:hover {
-            background: #b91c1c;
+            background: #c93338;
         }
 
         #message {
@@ -88,7 +90,7 @@
         #latest-flashcard {
             margin-top: 14px;
             padding-top: 12px;
-            border-top: 1px solid #e5e7eb;
+            border-top: 1px solid #33353b;
         }
 
         #latest-flashcard[hidden] {
@@ -98,7 +100,7 @@
         #latest-flashcard h2 {
             margin: 0 0 8px;
             font-size: 13px;
-            color: #555555;
+            color: #a0a3aa;
         }
 
         .flashcard-row {
@@ -109,19 +111,19 @@
 
         .flashcard-label {
             display: inline-block;
-            width: 46px;
-            color: #666666;
+            width: 56px;
+            color: #8b8f97;
             font-weight: 700;
         }
 
         .flashcard-value {
-            color: #222222;
+            color: #e6e6e6;
         }
 
         #translation-tools {
             margin-top: 14px;
             padding-top: 12px;
-            border-top: 1px solid #e5e7eb;
+            border-top: 1px solid #33353b;
         }
     </style>
   </head>
@@ -161,7 +163,7 @@
         </p>
 
         <p class="flashcard-row">
-            <span class="flashcard-label">ES/RU</span>
+            <span class="flashcard-label">Foreign</span>
             <span id="latest-translation" class="flashcard-value"></span>
         </p>
     </section>
